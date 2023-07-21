@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/profile"
+            android:icon="@drawable/profile"
+            android:title="Perfil"
+            />
+        <item android:id="@+id/resumecourse"
+            android:icon="@drawable/graph__analytics_business_product_graph_data_chart_analysis"
+            android:title="Resumen Curso"
+            />
+        <item android:id="@+id/rulescourse"
+            android:icon="@drawable/bullet_list__points_bullet_unordered_list_lists_bullets"
+            android:title="Reglamento"
+            />
+        <item android:id="@+id/topicsguideline"
+            android:icon="@drawable/book_reading__book_reading_learning"
+            android:title="Temario"
+            />
+        <item android:id="@+id/sesions"
+            android:icon="@drawable/class_lesson__class_lesson_education_teacher"
+            android:title="Sesiones"
+            />
+    </group>
+
+
+
+</menu>
