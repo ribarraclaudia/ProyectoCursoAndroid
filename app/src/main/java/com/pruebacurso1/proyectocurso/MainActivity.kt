@@ -39,23 +39,24 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId){
             R.id.profile -> {
-                // Aquí se seleccionó la opción de "Perfil" en el menú
-                // Reiniciar la actividad
+
                 recreate()
             }
             R.id.resumecourse -> {
-                // Se seleccionó la opción de "Resumen" en el menú
-                // Abrir la actividad ResumenActivity
+
                 val intent = Intent(this, ResumenActivity::class.java)
                 startActivity(intent)
             }
             R.id.rulescourse-> {
-                // Se seleccionó la opción de "Resumen" en el menú
-                // Abrir la actividad ResumenActivity
+
                 val intent = Intent(this, RulesActivity::class.java)
                 startActivity(intent)
             }
-            R.id.topicsguideline-> Toast.makeText(this,"Temario", Toast.LENGTH_SHORT).show()
+            R.id.topicsguideline->  {
+
+                val intent = Intent(this, TopicsGuideLineActivity::class.java)
+                startActivity(intent)
+            }
             R.id.sesions-> Toast.makeText(this,"Sesiones", Toast.LENGTH_SHORT).show()
 
         }

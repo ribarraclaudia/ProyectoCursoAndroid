@@ -12,17 +12,17 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 
-class ResumenActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
+class TopicsGuideLineActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
     private  lateinit var drawer: DrawerLayout
     private lateinit var toggle: ActionBarDrawerToggle
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_resumen)
+        setContentView(R.layout.activity_topicsguideline)
 
         val mToolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
         mToolbar.setTitleTextColor(Color.WHITE)
         setSupportActionBar(mToolbar)
-        supportActionBar?.title="Resumen"
+        supportActionBar?.title="Temario"
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
         drawer = findViewById(R.id.drawer_layout)
 
@@ -38,27 +38,24 @@ class ResumenActivity : AppCompatActivity(), NavigationView.OnNavigationItemSele
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId){
-            R.id.profile -> {
-                // Se seleccionó la opción de "Resumen" en el menú
-                // Abrir la actividad ResumenActivity
+            R.id.profile ->  {
+
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }
             R.id.resumecourse -> {
-                // Aquí se seleccionó la opción de "Perfil" en el menú
-                // Reiniciar la actividad
-                recreate()
+
+                val intent = Intent(this, ResumenActivity::class.java)
+                startActivity(intent)
             }
             R.id.rulescourse-> {
-                // Se seleccionó la opción de "Resumen" en el menú
-                // Abrir la actividad ResumenActivity
+
                 val intent = Intent(this, RulesActivity::class.java)
                 startActivity(intent)
             }
             R.id.topicsguideline-> {
 
-                val intent = Intent(this, TopicsGuideLineActivity::class.java)
-                startActivity(intent)
+                recreate()
             }
             R.id.sesions-> Toast.makeText(this,"Sesiones", Toast.LENGTH_SHORT).show()
 

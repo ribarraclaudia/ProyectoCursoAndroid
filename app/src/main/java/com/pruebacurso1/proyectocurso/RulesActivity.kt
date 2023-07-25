@@ -55,7 +55,11 @@ class RulesActivity  : AppCompatActivity(), NavigationView.OnNavigationItemSelec
                 // Reiniciar la actividad
                 recreate()
             }
-            R.id.topicsguideline-> Toast.makeText(this,"Temario", Toast.LENGTH_SHORT).show()
+            R.id.topicsguideline->  {
+
+                val intent = Intent(this, TopicsGuideLineActivity::class.java)
+                startActivity(intent)
+            }
             R.id.sesions-> Toast.makeText(this,"Sesiones", Toast.LENGTH_SHORT).show()
 
         }
