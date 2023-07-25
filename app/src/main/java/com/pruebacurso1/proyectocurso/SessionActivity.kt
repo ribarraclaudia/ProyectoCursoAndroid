@@ -12,17 +12,17 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 
-class TopicsGuideLineActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
+class SessionActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private  lateinit var drawer: DrawerLayout
     private lateinit var toggle: ActionBarDrawerToggle
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_topicsguideline)
+        setContentView(R.layout.activity_sessions)
 
         val mToolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
         mToolbar.setTitleTextColor(Color.WHITE)
         setSupportActionBar(mToolbar)
-        supportActionBar?.title="Temario"
+        supportActionBar?.title="Resumen"
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
         drawer = findViewById(R.id.drawer_layout)
 
@@ -34,11 +34,17 @@ class TopicsGuideLineActivity : AppCompatActivity(), NavigationView.OnNavigation
 
         val navigationView: NavigationView = findViewById(R.id.nav_view)
         navigationView.setNavigationItemSelectedListener(this)
+
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.container, SessionsFragment())
+                .commit()
+        }
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId){
-            R.id.profile ->  {
+            R.id.profile -> {
 
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
@@ -55,13 +61,14 @@ class TopicsGuideLineActivity : AppCompatActivity(), NavigationView.OnNavigation
             }
             R.id.topicsguideline-> {
 
-                recreate()
+                val intent = Intent(this, TopicsGuideLineActivity::class.java)
+                startActivity(intent)
             }
             R.id.sesions-> {
 
-                val intent = Intent(this, SessionActivity::class.java)
-                startActivity(intent)
-            }
+                // Reiniciar la actividad
+                recreate()
+            } //Toast.makeText(this,"Sesiones", Toast.LENGTH_SHORT).show()
 
         }
         drawer.closeDrawer(GravityCompat.START)

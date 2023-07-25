@@ -23,9 +23,15 @@ class SessionsFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_sessions, container, false)
 
         // Populate the sessionList with some sample data
-        sessionList.add(Session("Sesión 1", "Descripción de la sesión 1", false))
-        sessionList.add(Session("Sesión 2", "Descripción de la sesión 2", false))
-        sessionList.add(Session("Sesión 3", "Descripción de la sesión 3", false))
+        sessionList.add(Session("Sesión 1", "Fundamentos Java", false))
+        sessionList.add(Session("Sesión 2", "Fundamentos Android", false))
+        sessionList.add(Session("Sesión 3", "Ciclo de vida Activity", false))
+        sessionList.add(Session("Sesión 4", "Componentes Gráficos", false))
+        sessionList.add(Session("Sesión 5", "Fragments", false))
+        sessionList.add(Session("Sesión 6", "Servicios Web", false))
+        sessionList.add(Session("Sesión 7", "Firebase", false))
+        sessionList.add(Session("Sesión 8", "Utilidades Avanzadas", false))
+
         // Add more sessions as needed
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)

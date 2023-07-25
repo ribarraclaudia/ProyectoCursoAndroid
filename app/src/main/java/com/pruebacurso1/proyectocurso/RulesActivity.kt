@@ -60,7 +60,11 @@ class RulesActivity  : AppCompatActivity(), NavigationView.OnNavigationItemSelec
                 val intent = Intent(this, TopicsGuideLineActivity::class.java)
                 startActivity(intent)
             }
-            R.id.sesions-> Toast.makeText(this,"Sesiones", Toast.LENGTH_SHORT).show()
+            R.id.sesions->{
+
+                val intent = Intent(this, SessionActivity::class.java)
+                startActivity(intent)
+            }
 
         }
         drawer.closeDrawer(GravityCompat.START)
